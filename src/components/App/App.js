@@ -1,5 +1,5 @@
 import React from 'react';
-import '../List.js';
+import './List/List.js';
 
 class App extends React.Component {
   render() {
