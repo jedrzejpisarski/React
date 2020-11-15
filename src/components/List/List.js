@@ -21,7 +21,7 @@ class List extends React.Component {
       <section className={styles.component}>
         <Hero titleText={this.props.title} image={this.props.image} />
           <div className={styles.columns}>
-            {this.props.columns.map(col => <Column key={col.title} icon={col.icon} title={col.title} />)}
+            {this.props.columns.map(col => <Column key={col.title} title={col.title} />)}
           </div>
       </section>
     )
