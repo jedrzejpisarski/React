@@ -23,9 +23,6 @@ class List extends React.Component {
           <div className={styles.description}>
             {this.props.description}
           </div>
-          <div className={styles.columns}>
-            {this.props.columns.map(col => <Column key={col.title} icon={col.icon} title={col.title} />)}
-          </div>
       </section>
     )
   }
