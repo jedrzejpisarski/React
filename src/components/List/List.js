@@ -20,8 +20,8 @@ class List extends React.Component {
     return (
       <section className={styles.component}>
         <Hero titleText={this.props.title} image={this.props.image} />
-          <div className={styles.description}>
-            {this.props.description}
+          <div className={styles.columns}>
+            {this.props.columns.map(col => <Column key={col.title} icon={col.icon} title={col.title} />)}
           </div>
       </section>
     )
