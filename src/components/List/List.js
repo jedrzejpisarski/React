@@ -6,6 +6,10 @@ import PropTypes from 'prop-types';
 import {settings} from '../../data/dataStore';
 
 class List extends React.Component {
+  state = {
+    columns: this.props.columns || [],
+  }
+  
   static propTypes = {
     title: PropTypes.node,
     description: PropTypes.node,
