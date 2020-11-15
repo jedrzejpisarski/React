@@ -24,9 +24,9 @@ class List extends React.Component {
     return (
       <section className={styles.component}>
         <Hero titleText={this.props.title} image={this.props.image} />
-          <div className={styles.columns}>
-            {this.props.columns.map(col => <Column key={col.title} title={col.title} />)}
-          </div>
+        {this.state.columns.map(({key, ...columnProps}) => (
+          <Column key={key} {...columnProps} />
+        ))}
       </section>
     )
   }
