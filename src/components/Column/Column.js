@@ -2,8 +2,14 @@ import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon';
+import Card from '../Card/Card';
 
 const Column = props => {
+
+    state = {
+        cards: this.props.cards || [],
+      }
+
     return (
         <div className={styles.component}>
             <h2>
