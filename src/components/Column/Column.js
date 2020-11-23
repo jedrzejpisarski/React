@@ -12,7 +12,6 @@ const Column = (props) => {
       ...cards,
       { key: cards.length ? cards[cards.length - 1].key + 1 : 0, title: arg },
     ]);
-    console.log(arg);
   };
   return (
     <div className={styles.component}>
