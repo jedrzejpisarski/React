@@ -6,7 +6,7 @@ const Card = ({title}) => {
         <div className={styles.component}>
             <h2>{ title }</h2>
         </div>
-    )
+    );
 };
 
 export default Card; 

@@ -5,58 +5,58 @@ import PropTypes from 'prop-types';
 
 class Creator extends React.Component {
   static propTypes = {
-    text: PropTypes.string,
+      text: PropTypes.string,
   }
 
   static defaultProps = {
-    text: 'Add new item',
+      text: 'Add new item',
   }
 
   state = {
-    value: '',
-    visibleButtons: false,
+      value: '',
+      visibleButtons: false,
   }
 
   handleChange = event => {
-    // console.log(event);
-    this.setState({
-      value: event.target.value,
-      visibleButtons: event.target.value.length > 0
-    });
+      // console.log(event);
+      this.setState({
+          value: event.target.value,
+          visibleButtons: event.target.value.length > 0,
+      });
   }
 
   handleOK = () => {
-    if(this.state.value != ''){
-      this.props.action(this.state.value);
-      this.setState({
-        value: '',
-        visibleButtons: false
-      });
-    }
+      if(this.state.value != ''){
+          this.props.action(this.state.value);
+          this.setState({
+              value: '',
+              visibleButtons: false,
+          });
+      }
   }
 
   handleCancel = () => {
-    this.setState({
-      value: '',
-      visibleButtons: false
-    });
+      this.setState({
+          value: '',
+          visibleButtons: false,
+      });
   }
 
   render() {
-    return (
-      <div className={styles.component}>
-        <input
-          type='text'
-          placeholder={this.props.text}
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-        <div className={styles.buttons + (this.state.visibleButtons ? ' ' + styles.buttonsShown : '')}>
-          <Button onClick={this.handleOK}>OK</Button>
-          <Button onClick={this.handleCancel} variant='danger'>cancel</Button>
-        </div>
-      </div>
-    );
+      return (
+          <div className={styles.component}>
+              <input
+                  type='text'
+                  placeholder={this.props.text}
+                  value={this.state.value}
+                  onChange={this.handleChange}
+              />
+              <div className={styles.buttons + (this.state.visibleButtons ? ' ' + styles.buttonsShown : '')}>
+                  <Button onClick={this.handleOK}>OK</Button>
+                  <Button onClick={this.handleCancel} variant='danger'>cancel</Button>
+              </div>
+          </div>
+      );
   }
 }
 

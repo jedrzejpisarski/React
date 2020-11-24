@@ -8,7 +8,7 @@ const Column = props => {
 
     state = {
         cards: this.props.cards || [],
-      }
+    };
 
     return (
         <div className={styles.component}>
@@ -16,12 +16,12 @@ const Column = props => {
                 <Icon name={props.icon} />
                 { props.title }</h2>
         </div>
-    )
+    );
 };
 
 Column.propTypes = {
-  title: PropTypes.string,
-  icon: PropTypes.string
-}
+    title: PropTypes.string,
+    icon: PropTypes.string,
+};
 
 export default Column;
