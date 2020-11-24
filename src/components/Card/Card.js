@@ -1,12 +1,10 @@
-import {settings, listData} from '../../data/dataStore';
+import React from 'react';
 import styles from './Card.scss';
 
-const Card = ({title}) => {
+export const Card = (props) => {
     return (
         <div className={styles.component}>
-            <h2>{ title }</h2>
+            <h2>{props.title}</h2>
         </div>
     );
 };
-
-export default Card; 
