@@ -8,14 +8,6 @@
     "build": "webpack --mode production",
     "lint": "eslint --fix src/"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": " --fix lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.js": "eslint"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
