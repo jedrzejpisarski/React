@@ -32,6 +32,7 @@ const Column = (props) => {
 Column.propTypes = {
     title: PropTypes.string,
     icon: PropTypes.string,
+    cards: PropTypes.array,
 };
 
 export default Column;

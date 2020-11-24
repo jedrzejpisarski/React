@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Card.scss';
+import PropTypes from 'prop-types';
 
 export const Card = (props) => {
     return (
@@ -7,4 +8,8 @@ export const Card = (props) => {
             <h2>{props.title}</h2>
         </div>
     );
+};
+
+Card.propTypes = {
+    title: PropTypes.string,
 };
