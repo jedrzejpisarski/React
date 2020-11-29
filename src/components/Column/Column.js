@@ -3,16 +3,12 @@ import styles from './Column.scss';
 import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon';
 import { Card } from '../Card/Card';
-import Creator from '../Creator/Creator.js';
+//import Creator from '../Creator/Creator.js';
 
 const Column = (props) => {
-    const [cards, setCards] = useState(props.cards);
-    const addCard = (arg) => {
-        setCards([
-            ...cards,
-            { key: cards.length ? cards[cards.length - 1].key + 1 : 0, title: arg },
-        ]);
-    };
+
+    const {cards} = this.props;
+
     return (
         <div className={styles.component}>
             <h2>
@@ -22,9 +18,11 @@ const Column = (props) => {
             {cards.map((card) => {
                 return <Card key={card.key} title={card.title} />;
             })}
+            {/*
             <div className={styles.creator}>
                 <Creator text={'add card'} action={(title) => addCard(title)} />
             </div>
+            */}
         </div>
     );
 };

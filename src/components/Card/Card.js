@@ -3,6 +3,9 @@ import styles from './Card.scss';
 import PropTypes from 'prop-types';
 
 export const Card = (props) => {
+
+    const {title} = this.props;
+
     return (
         <div className={styles.component}>
             <h2>{props.title}</h2>
