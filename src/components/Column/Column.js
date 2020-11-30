@@ -1,36 +1,60 @@
-import React, { useState } from 'react';
-import styles from './Column.scss';
-import PropTypes from 'prop-types';
-import Icon from '../Icon/Icon';
-import { Card } from '../Card/Card';
-//import Creator from '../Creator/Creator.js';
+import React from "react";
+import { connect } from "react-redux";
+import styles from "./Column.scss";
+import PropTypes from "prop-types";
+import Icon from "../Icon/Icon";
+import { Card } from "../Card/Card";
+import Creator from "../Creator/Creator.js";
+import { settings } from "../../data/dataStore";
+import { createActionAddCard } from "../../redux/cardsRedux";
 
-const Column = (props) => {
-
-    const {cards} = this.props;
-
-    return (
-        <div className={styles.component}>
-            <h2>
-                <Icon name={props.icon} />
-                {props.title}
-            </h2>
-            {cards.map((card) => {
-                return <Card key={card.key} title={card.title} />;
-            })}
-            {/*
-            <div className={styles.creator}>
-                <Creator text={'add card'} action={(title) => addCard(title)} />
-            </div>
-            */}
-        </div>
-    );
+const Column = ({ icon, title, cards, addCard, id, searchString }) => {
+  console.log(id);
+  return (
+    <div className={styles.component}>
+      <h2>
+        <Icon name={icon} />
+        {title}
+      </h2>
+      {cards
+        .filter(
+          (card) =>
+            card.columnId == id &&
+            new RegExp(searchString, "i").test(card.title)
+        )
+        .map((card) => {
+          return <Card key={card.id} title={card.title} />;
+        })}
+      <div className={styles.creator}>
+        <Creator text={"add card"} action={(title) => addCard(title)} />
+      </div>
+    </div>
+  );
 };
 
 Column.propTypes = {
-    title: PropTypes.string,
-    icon: PropTypes.string,
-    cards: PropTypes.array,
+  title: PropTypes.string,
+  icon: PropTypes.string,
+  cards: PropTypes.array,
 };
 
-export default Column;
+Column.defaultProps = {
+  icon: settings.defaultColumnIcon,
+};
+
+const mapStateToProps = ({ cards, searchString }) => ({
+  cards: cards,
+  searchString: searchString,
+});
+
+const mapDispatchToProps = (dispatch, props) => ({
+  addCard: (title) =>
+    dispatch(
+      createActionAddCard({
+        columnId: props.id,
+        title,
+      })
+    ),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Column);

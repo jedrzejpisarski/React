@@ -1,56 +1,56 @@
-import React from 'react';
-import Hero from '../Hero/Hero.js';
-import ColumnContainer from '../Column/ColumnContainer.js';
-import styles from './List.scss';
-import PropTypes from 'prop-types';
-import { settings } from '../../data/dataStore';
-//import Creator from '../Creator/Creator.js';
+import React from "react";
+import { connect } from "react-redux";
+import Hero from "../Hero/Hero.js";
+import Column from "../Column/Column.js";
+import styles from "./List.scss";
+import PropTypes from "prop-types";
+import { settings } from "../../data/dataStore";
+import Creator from "../Creator/Creator.js";
+import { getColumnsForList } from "../../redux/columnsRedux";
+import { createActionAddColumn } from "../../redux/columnsRedux";
 
-class List extends React.Component {
- 
-  static propTypes = {
-      title: PropTypes.node,
-      description: PropTypes.node,
-      columns: PropTypes.array,
-  };
-
-  static defaultProps = {
-      description: settings.defaultListDescription,
-  };
-
-  render() {
-
-    const {title, image, description, columns} = this.props;
-
-      return (
-          <section className={styles.component}>
-              <Hero titleText={title} image={image} />
-              <div className={styles.description}>
-                    {ReactHtmlParser(description)}
-              </div>
-              <div className={styles.columns}>
-                  {columns.map(columnData => (
-                    <ColumnContainer key={columnData.id} {...columnData} />
-                  ))}
-              </div>
-              {/*
-              <div className={styles.creator}>
-                  <Creator
-                      text={settings.columnCreatorText}
-                      action={(title) => this.addColumn(title)}
-                  />
-              </div>
-              */}
-          </section>
-      );
-  }
-}
-
-List.propTypes = {
-    columns: PropTypes.array.isRequired,
-    title: PropTypes.string,
-    image: PropTypes.string,
-    description: PropTypes.string,
+const List = ({ title, image, columns, addColumn }) => {
+  return (
+    <section className={styles.component}>
+      <Hero titleText={title} image={image} />
+      <div className={styles.columns}>
+        {columns.map(({ id, ...column }) => {
+          return <Column key={id} id={id} {...column} />;
+        })}
+      </div>
+      <div className={styles.creator}>
+        <Creator
+          text={settings.columnCreatorText}
+          action={(item) => addColumn(item)}
+        />
+      </div>
+    </section>
+  );
 };
 
-export default List;
+List.propTypes = {
+  title: PropTypes.node,
+  description: PropTypes.node,
+  columns: PropTypes.array,
+  image: PropTypes.string,
+};
+
+List.defaultProps = {
+  description: settings.defaultListDescription,
+};
+
+const mapStateToProps = (state, props) => ({
+  columns: getColumnsForList(state, props.id),
+});
+
+const mapDispatchToProps = (dispatch, props) => ({
+  addColumn: (title) =>
+    dispatch(
+      createActionAddColumn({
+        listId: props.id,
+        title,
+      })
+    ),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(List);
