@@ -10,7 +10,6 @@ const App = ({ title, subtitle, lists }) => {
     <main className={styles.component}>
       <h1 className={styles.title}>{title}</h1>
       <h2 className={styles.subtitle}>{subtitle}</h2>
-      <Container list={this.state.list} />
       <Search />
       {lists.map((listData) => (
         <List key={listData.id} {...listData} />
