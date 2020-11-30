@@ -7,4 +7,8 @@ Icon.propTypes = {
   name: PropTypes.string,
 };
 
+Icon.propTypes = {
+  name: PropTypes.string,
+};
+
 export default Icon;

@@ -13,3 +13,7 @@ export const Card = ({ title }) => {
 Card.propTypes = {
   title: PropTypes.string,
 };
+
+Card.propTypes = {
+  title: PropTypes.string,
+};
