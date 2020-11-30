@@ -1,12 +1,12 @@
 {
   "rules": {
       "indent": [
-          2,
-          4
+          1,
+          2
       ],
       "quotes": [
           2,
-          "single"
+          "double"
       ],
       "linebreak-style": [
           2,
