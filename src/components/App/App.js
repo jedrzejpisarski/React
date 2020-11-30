@@ -26,3 +26,14 @@ const mapStateToProps = ({ app: { title, subtitle }, lists }) => ({
 });
 
 export default connect(mapStateToProps)(App);
+
+// wrzucić do package.json pod scripts
+
+// "husky": {
+//   "hooks": {
+//     "pre-commit": "lint-staged"
+//   }
+// },
+// "lint-staged": {
+//   "src/**/*.js": "eslint"
+// },
