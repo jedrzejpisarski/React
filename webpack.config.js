@@ -22,6 +22,22 @@ const baseConfig = () => ({
           loader: "babel-loader",
         },
       },
+      {
+          test: /\.(png|gif|jpe?g|svg)$/i,
+          use: [
+            {
+              loader: 'url-loader',
+            },
+          ],
+      },
+      {
+        test: /.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ],
   },
   plugins: [

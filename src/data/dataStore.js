@@ -72,6 +72,13 @@ export const listData = {
   ],
 };
 
+export const subpages = {
+
+  tittle: "Lorem Ipsum",
+  url: "http://uploads.kodilla.com/bootcamp/fer/11.react/space.png",
+
+};
+
 const lists = [
   {
     id: "list-1",
