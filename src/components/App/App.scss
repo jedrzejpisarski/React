@@ -22,3 +22,14 @@
 .title + .subtitle {
   margin-top: (- $base-size * 3);
 }
+
+.switchWrapper {
+  position: relative;
+
+  > :first-child ~ * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
