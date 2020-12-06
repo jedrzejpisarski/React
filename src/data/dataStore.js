@@ -19,7 +19,7 @@ export const pageContents = {
   subtitle: "A simple to-do app, with lists, columns and cards",
 };
 
-export const listData = {
+export const listData1 = {
   title: "Things to do <sup>soon!</sup>",
   description: "Interesting things I want to check out!",
   image: "http://uploads.kodilla.com/bootcamp/fer/11.react/space.png",
@@ -39,6 +39,14 @@ export const listData = {
         },
       ],
     },
+  ],
+};
+
+export const listData2 = {
+  title: "Things to do <sup>soon!</sup>",
+  description: "Interesting things I want to check out!",
+  image: "http://uploads.kodilla.com/bootcamp/fer/11.react/space.png",
+  columns: [
     {
       key: 1,
       title: "Movies",
@@ -54,6 +62,14 @@ export const listData = {
         },
       ],
     },
+  ],
+};
+
+export const listData3 = {
+  title: "Things to do <sup>soon!</sup>",
+  description: "Interesting things I want to check out!",
+  image: "http://uploads.kodilla.com/bootcamp/fer/11.react/space.png",
+  columns: [
     {
       key: 2,
       title: "Games",
