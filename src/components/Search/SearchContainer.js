@@ -1,11 +1,12 @@
-import { connect } from "react-redux";
-import Search from "./Search";
+import { connect } from 'react-redux';
+import Search from './Search';
 import {
   getSearchString,
   countVisibleCards,
   countAllCards,
   changeSearchString,
-} from "../../redux/searchStringRedux";
+} from '../../redux/searchStringRedux';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
   searchString: getSearchString(state),
@@ -18,4 +19,5 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(changeSearchString(newSearchString)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+const WithRouterSearch = withRouter(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(WithRouterSearch);

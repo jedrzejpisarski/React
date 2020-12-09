@@ -1,12 +1,12 @@
 import React from 'react';
-import {NavLink, Link} from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import styles from './Header.scss';
 import Container from '../Container/Container';
 import Icon from '../Icon/Icon';
-import Search from '../Search/Search';
+import Search from '../Search/SearchContainer';
 
 class Header extends React.Component {
-  render(){
+  render() {
     return (
       <header className={styles.component}>
         <Container>
@@ -15,13 +15,18 @@ class Header extends React.Component {
               <Icon name='cat' />
             </Link>
             <nav>
-                <NavLink exact to='/' activeClassName='active'>Home</NavLink>
-                <NavLink exact to='/info' activeClassName='active'>Info</NavLink>
-                <NavLink exact to='/FAQ' activeClassName='active'>FAQ</NavLink>
-                <Search/>
+              <NavLink exact to='/' activeClassName='active'>
+                Home
+              </NavLink>
+              <NavLink exact to='/info' activeClassName='active'>
+                Info
+              </NavLink>
+              <NavLink exact to='/FAQ' activeClassName='active'>
+                FAQ
+              </NavLink>
+              <Search />
             </nav>
           </div>
-          
         </Container>
       </header>
     );

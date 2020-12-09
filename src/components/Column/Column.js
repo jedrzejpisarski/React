@@ -1,15 +1,14 @@
-import React from "react";
-import { connect } from "react-redux";
-import styles from "./Column.scss";
-import PropTypes from "prop-types";
-import Icon from "../Icon/Icon";
-import { Card } from "../Card/Card";
-import Creator from "../Creator/Creator.js";
-import { settings } from "../../data/dataStore";
-import { createActionAddCard } from "../../redux/cardsRedux";
+import React from 'react';
+import { connect } from 'react-redux';
+import styles from './Column.scss';
+import PropTypes from 'prop-types';
+import Icon from '../Icon/Icon';
+import { Card } from '../Card/Card';
+import Creator from '../Creator/Creator.js';
+import { settings } from '../../data/dataStore';
+import { createActionAddCard } from '../../redux/cardsRedux';
 
 const Column = ({ icon, title, cards, addCard, id, searchString }) => {
-  console.log(id);
   return (
     <div className={styles.component}>
       <h2>
@@ -17,16 +16,12 @@ const Column = ({ icon, title, cards, addCard, id, searchString }) => {
         {title}
       </h2>
       {cards
-        .filter(
-          (card) =>
-            card.columnId == id &&
-            new RegExp(searchString, "i").test(card.title)
-        )
+        .filter((card) => card.columnId == id)
         .map((card) => {
           return <Card key={card.id} title={card.title} />;
         })}
       <div className={styles.creator}>
-        <Creator text={"add card"} action={(title) => addCard(title)} />
+        <Creator text={'add card'} action={(title) => addCard(title)} />
       </div>
     </div>
   );
