@@ -19,75 +19,6 @@ export const pageContents = {
   subtitle: "A simple to-do app, with lists, columns and cards",
 };
 
-export const listData1 = {
-  title: "Things to do <sup>soon!</sup>",
-  description: "Interesting things I want to check out!",
-  image: "http://uploads.kodilla.com/bootcamp/fer/11.react/space.png",
-  columns: [
-    {
-      key: 0,
-      title: "Books",
-      icon: "book",
-      cards: [
-        {
-          key: 0,
-          title: "This Is Going to Hurt",
-        },
-        {
-          key: 1,
-          title: "Interpreter of Maladies",
-        },
-      ],
-    },
-  ],
-};
-
-export const listData2 = {
-  title: "Things to do <sup>soon!</sup>",
-  description: "Interesting things I want to check out!",
-  image: "http://uploads.kodilla.com/bootcamp/fer/11.react/space.png",
-  columns: [
-    {
-      key: 1,
-      title: "Movies",
-      icon: "film",
-      cards: [
-        {
-          key: 0,
-          title: "Harry Potter",
-        },
-        {
-          key: 1,
-          title: "Star Wars",
-        },
-      ],
-    },
-  ],
-};
-
-export const listData3 = {
-  title: "Things to do <sup>soon!</sup>",
-  description: "Interesting things I want to check out!",
-  image: "http://uploads.kodilla.com/bootcamp/fer/11.react/space.png",
-  columns: [
-    {
-      key: 2,
-      title: "Games",
-      icon: "gamepad",
-      cards: [
-        {
-          key: 0,
-          title: "The Witcher",
-        },
-        {
-          key: 1,
-          title: "Skyrim",
-        },
-      ],
-    },
-  ],
-};
-
 export const subpages = {
 
   tittle: "Lorem Ipsum",
@@ -97,10 +28,73 @@ export const subpages = {
 
 const lists = [
   {
-    id: "list-1",
+    id: 'listData-1',
     title: "Things to do <sup>soon!</sup>",
     description: "Interesting things I want to check out!",
     image: "http://uploads.kodilla.com/bootcamp/fer/11.react/space.png",
+    columns: [
+      {
+        key: 2,
+        title: "Games",
+        icon: "gamepad",
+        cards: [
+          {
+            key: 0,
+            title: "The Witcher",
+          },
+          {
+            key: 1,
+            title: "Skyrim",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'listData-2',
+    title: "Things to do <sup>soon!</sup>",
+    description: "Interesting things I want to check out!",
+    image: "http://uploads.kodilla.com/bootcamp/fer/11.react/space.png",
+    columns: [
+      {
+        key: 1,
+        title: "Movies",
+        icon: "film",
+        cards: [
+          {
+            key: 0,
+            title: "Harry Potter",
+          },
+          {
+            key: 1,
+            title: "Star Wars",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'listData-3',
+    title: "Things to do <sup>soon!</sup>",
+    description: "Interesting things I want to check out!",
+    image: "http://uploads.kodilla.com/bootcamp/fer/11.react/space.png",
+    columns: [
+      {
+        key: 0,
+        title: "Books",
+        icon: "book",
+        cards: [
+          {
+            key: 0,
+            title: "This Is Going to Hurt",
+          },
+          {
+            key: 1,
+            title: "Interpreter of Maladies",
+          },
+        ],
+      },
+    ],
   },
 ];
 

@@ -12,12 +12,6 @@ const Home = ({ title, subtitle, lists }) => {
       {lists.map((listData1) => (
         <ListLink key={listData1.id} {...listData1} />
       ))}
-      {lists.map((listData2) => (
-        <ListLink key={listData2.id} {...listData2} />
-      ))}
-            {lists.map((listData3) => (
-        <ListLink key={listData3.id} {...listData3} />
-      ))}
     </main>
   );
 };

@@ -9,7 +9,7 @@ const ListLink = ({id, title, image, description}) => (
   <Link to={`/list/${id}`} className={styles.link}>
     <section className={styles.component}>
       <div className={styles.text}>
-        <h2 className={styles.title}>{ReactHtmlParser(title)}</h2>
+        <h2 className={styles.title}>{ReactHtmlParser(id)}</h2>
         <div className={styles.description}>
           {ReactHtmlParser(description)}
         </div>
