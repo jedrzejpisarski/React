@@ -10,9 +10,10 @@ import { getColumnsForList } from "../../redux/columnsRedux";
 import { createActionAddColumn } from "../../redux/columnsRedux";
 
 const List = ({ title, image, columns, addColumn }) => {
+  console.log(title, image);
   return (
     <section className={styles.component}>
-      <Hero titleText={title} image={image} />
+      <Hero titleText={title} image={image}/>
       <div className={styles.columns}>
         {columns.map(({ id, ...column }) => {
           return <Column key={id} id={id} {...column} />;
